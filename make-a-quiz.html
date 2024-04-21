@@ -51,7 +51,7 @@
       displayTheQuestions();
 
       async function getAll() {
-        let response = await fetch(host + "/questions");
+        let response = await fetch(host + "/questions",);
         let result = await response.json();
         return result;
       }

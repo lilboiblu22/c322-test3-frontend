@@ -64,9 +64,9 @@
       displayTheQuestions();
 
       async function getAll() {
-        let response = await fetch(host + "/questions");
-        let result = await response.json();
-        return result;
+          let response = await fetch(host + "/questions");
+          let result = await response.json();
+          return result;
       }
 
       async function displayTheQuestions() {
@@ -151,7 +151,7 @@
           message = "Something went wrong! Question data could not be saved.";
         }
         alert(message);
-        location.href = "add-question.html";
+       location.href = "add-question.html";
       }
 
       async function submitTheImage(id, imageFile) {
