@@ -1,10 +1,7 @@
-const mode = 0;
-
-const host_local = "http://localhost:8080";
-const host_remote = "https://ducks-service-???.onrender.com";
+let host = "https://test3-jar-latest.onrender.com"
 
 function getHost() {
-    return (mode == 0) ? host_local : host_remote;
+    return host;
 }
 
 function isLoggedIn() {
@@ -63,7 +60,7 @@ async function signup() {
         body: JSON.stringify(customer)
       };
       try {
-        let response = await fetch(getHost() + "/signup", request);
+        let response = await fetch(host + "/signup", request);
         if(response.status == 200) {  
             alert("The registration was successful!")
             location.href = "login.html";
@@ -93,7 +90,7 @@ async function login() {
         body: JSON.stringify(customer)
       };
       try {
-        let response = await fetch(getHost() + "/signin", request);
+        let response = await fetch(host + "/signin", request);
         if(response.status == 200) {  
             alert("The login was successful!");
             const token = await response.text();
